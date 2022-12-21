@@ -1,4 +1,4 @@
-import { Moment } from './../../Moments';
+import { Moment } from 'src/app/Moments';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 

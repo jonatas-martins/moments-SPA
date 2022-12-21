@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Moment } from 'src/app/Moments';
+import { MomentService } from 'src/app/services/moment.service';
 
 @Component({
   selector: 'app-new-moment',
@@ -9,7 +10,7 @@ import { Moment } from 'src/app/Moments';
 export class NewMomentComponent implements OnInit {
   btnText = 'Compartilhar!';
 
-  constructor() {}
+  constructor(private momentService: MomentService) {}
 
   ngOnInit(): void {}
 
@@ -22,5 +23,7 @@ export class NewMomentComponent implements OnInit {
     if (moment.image) {
       formData.append('image', moment.image);
     }
+
+    await this.momentService.createMoment(formData).subscribe();
   }
 }
