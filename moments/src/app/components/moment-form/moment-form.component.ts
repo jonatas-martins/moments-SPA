@@ -10,6 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class MomentFormComponent implements OnInit {
   @Input() btnText!: string;
   @Output() onSubmit = new EventEmitter<Moment>();
+  @Input() momentData: Moment | null = null;
   momentForm!: FormGroup;
 
   constructor() {}
